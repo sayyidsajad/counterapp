@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+
 import './App.css';
+import CounterFunction from './Components/CounterFunction';
+import Counterclass from './Components/Counterclass';
+import User from './Components/User'
+import Employee from './Components/Employee'
+import { useState } from 'react';
 
 function App() {
+const [username,Setusername]=useState('Sajad')
+const [age,Setage]=useState('21')
   return (
-    <div className="App">
+    <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}} className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <CounterFunction />
+        <Counterclass />
+        <User username={username} age={age}/>
+        <Employee />
       </header>
     </div>
   );
-}
+  }
+
 
 export default App;
